@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
+const normalizeExternalUrl = (value, fallback) => {
+  const raw = (value || '').toString().trim();
+  if (!raw) return fallback;
+  if (raw.startsWith('http://') || raw.startsWith('https://')) return raw;
+  return `https://${raw}`;
+};
+
 const Footer = () => {
   const [socialLinks, setSocialLinks] = useState({});
 
@@ -23,27 +30,36 @@ const Footer = () => {
   const socials = [
     {
       name: 'Facebook',
-      href: socialLinks.facebook || 'https://facebook.com',
+      href: normalizeExternalUrl(socialLinks.facebook, 'https://facebook.com'),
       icon: (
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
           <path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H7.9v-2.9h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34v7.03C18.34 21.19 22 17.06 22 12.07z" />
         </svg>
       ),
     },
     {
-      name: 'YouTube',
-      href: socialLinks.youtube || 'https://youtube.com',
+      name: 'Instagram',
+      href: normalizeExternalUrl(socialLinks.instagram, 'https://instagram.com'),
       icon: (
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.4 3 3v10c0 1.7-1.4 3-3 3H7c-1.7 0-3-1.4-3-3V7c0-1.7 1.4-3 3-3zm5 2.3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'YouTube',
+      href: normalizeExternalUrl(socialLinks.youtube, 'https://youtube.com'),
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
           <path d="M21.6 7.2a3 3 0 00-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 00-2.1 2.1A31.6 31.6 0 002 12a31.6 31.6 0 00.4 4.8 3 3 0 002.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 002.1-2.1A31.6 31.6 0 0022 12a31.6 31.6 0 00-.4-4.8zM10 15.5V8.5l6 3.5-6 3.5z" />
         </svg>
       ),
     },
     {
       name: 'WhatsApp',
-      href: socialLinks.whatsapp || 'https://wa.me/',
+      href: normalizeExternalUrl(socialLinks.whatsapp, 'https://wa.me/'),
       icon: (
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1120 12a8 8 0 01-8 8zm4.4-6.1c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.6.1-.2.2-.7.7-.9.9-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.5-1.9-.1-.3 0-.4.1-.5l.4-.4c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.1 1.6 2.5 3.9 3.5.5.2 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-.9.2-.4.2-.8.1-.9-.1-.1-.2-.2-.4-.3z" />
         </svg>
       ),
@@ -92,11 +108,11 @@ const Footer = () => {
                   </svg>
                   <span>d3ztudio@gmail.com</span>
                 </a>
-                <a href="tel:+9 9188081324" className="inline-flex items-center gap-2 text-white/90 hover:text-gold">
+                <a href="tel:9188081324" className="inline-flex items-center gap-2 text-white/90 hover:text-gold">
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
                     <path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.2.8.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.5 22 2 13.5 2 3c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.4.3 2.9.8 4.2.1.4 0 .9-.2 1.2L6.6 10.8z" />
                   </svg>
-                  <span>+91 9188081324</span>
+                  <span>9188081324</span>
                 </a>
               </div>
             </div>

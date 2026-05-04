@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { AuthProvider, useAuth } from './AuthContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import MassTimings from './components/MassTimings';
 import EventTimeline from './components/EventTimeline';
 import AdminDashboard from './components/AdminDashboard';
@@ -24,6 +25,7 @@ function AppContent() {
       </Helmet>
       <Navbar />
       <Hero />
+      <About />
       <MassTimings />
       <EventTimeline />
       {isAdmin && <AdminDashboard />}

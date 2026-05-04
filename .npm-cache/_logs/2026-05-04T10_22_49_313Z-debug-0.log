@@ -1,0 +1,305 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.3
+2 info using node@v22.20.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\stsebastian-church\.npmrc
+5 silly config load:file:C:\Users\dolus\.npmrc
+6 silly config load:file:C:\Users\dolus\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install"
+9 verbose logfile logs-max:10 dir:D:\stsebastian-church\.npm-cache\_logs\2026-05-04T10_22_49_313Z-
+10 verbose logfile D:\stsebastian-church\.npm-cache\_logs\2026-05-04T10_22_49_313Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest xlsx@^0.18.5
+15 silly packumentCache full:https://registry.npmjs.org/xlsx cache-miss
+16 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+17 http fetch GET https://registry.npmjs.org/xlsx attempt 1 failed with EACCES
+18 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with EACCES
+19 http fetch GET https://registry.npmjs.org/xlsx attempt 2 failed with EACCES
+20 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with EACCES
+21 http fetch GET https://registry.npmjs.org/xlsx attempt 3 failed with EACCES
+22 silly placeDep ROOT xlsx@ OK for: stsebastian-church@0.1.0 want: ^0.18.5
+23 silly fetch manifest react@^16.3.0 || ^17.0.0 || ^18.0.0
+24 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+25 http fetch GET https://registry.npmjs.org/react attempt 1 failed with EACCES
+26 http fetch GET https://registry.npmjs.org/react attempt 2 failed with EACCES
+27 http fetch GET https://registry.npmjs.org/react attempt 3 failed with EACCES
+28 silly placeDep ROOT react@ REPLACE for: react-side-effect@2.1.2 want: ^16.3.0 || ^17.0.0 || ^18.0.0
+29 warn ERESOLVE overriding peer dependency {
+29 warn ERESOLVE   code: 'ERESOLVE',
+29 warn ERESOLVE   edge: {
+29 warn ERESOLVE     type: 'peer',
+29 warn ERESOLVE     name: 'react',
+29 warn ERESOLVE     spec: '^19.2.5',
+29 warn ERESOLVE     from: {
+29 warn ERESOLVE       name: 'react-dom',
+29 warn ERESOLVE       version: '19.2.5',
+29 warn ERESOLVE       location: 'node_modules/react-dom',
+29 warn ERESOLVE       isWorkspace: false,
+29 warn ERESOLVE       dependents: [Array]
+29 warn ERESOLVE     }
+29 warn ERESOLVE   },
+29 warn ERESOLVE   dep: {
+29 warn ERESOLVE     name: 'react',
+29 warn ERESOLVE     version: undefined,
+29 warn ERESOLVE     errors: [ [FetchError] ],
+29 warn ERESOLVE     package: {},
+29 warn ERESOLVE     whileInstalling: {
+29 warn ERESOLVE       name: 'react-side-effect',
+29 warn ERESOLVE       version: '2.1.2',
+29 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+29 warn ERESOLVE     },
+29 warn ERESOLVE     location: 'node_modules/react',
+29 warn ERESOLVE     isWorkspace: false,
+29 warn ERESOLVE     dependents: [ [Object] ]
+29 warn ERESOLVE   },
+29 warn ERESOLVE   force: false,
+29 warn ERESOLVE   isMine: false,
+29 warn ERESOLVE   strictPeerDeps: false,
+29 warn ERESOLVE   current: {
+29 warn ERESOLVE     name: 'react',
+29 warn ERESOLVE     version: '19.2.5',
+29 warn ERESOLVE     location: 'node_modules/react',
+29 warn ERESOLVE     isWorkspace: false,
+29 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+29 warn ERESOLVE   }
+29 warn ERESOLVE }
+30 warn ERESOLVE overriding peer dependency {
+30 warn ERESOLVE   code: 'ERESOLVE',
+30 warn ERESOLVE   edge: {
+30 warn ERESOLVE     type: 'peer',
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     spec: '^19.2.5',
+30 warn ERESOLVE     from: {
+30 warn ERESOLVE       name: 'react-dom',
+30 warn ERESOLVE       version: '19.2.5',
+30 warn ERESOLVE       location: 'node_modules/react-dom',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     }
+30 warn ERESOLVE   },
+30 warn ERESOLVE   dep: {
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     version: undefined,
+30 warn ERESOLVE     errors: [ [FetchError] ],
+30 warn ERESOLVE     package: {},
+30 warn ERESOLVE     whileInstalling: {
+30 warn ERESOLVE       name: 'react-side-effect',
+30 warn ERESOLVE       version: '2.1.2',
+30 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+30 warn ERESOLVE     },
+30 warn ERESOLVE     location: 'node_modules/react',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [ [Object] ]
+30 warn ERESOLVE   },
+30 warn ERESOLVE   force: false,
+30 warn ERESOLVE   isMine: false,
+30 warn ERESOLVE   strictPeerDeps: false,
+30 warn ERESOLVE   current: {
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     version: '19.2.5',
+30 warn ERESOLVE     location: 'node_modules/react',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+30 warn ERESOLVE   }
+30 warn ERESOLVE }
+31 warn ERESOLVE overriding peer dependency {
+31 warn ERESOLVE   code: 'ERESOLVE',
+31 warn ERESOLVE   edge: {
+31 warn ERESOLVE     type: 'peer',
+31 warn ERESOLVE     name: 'react',
+31 warn ERESOLVE     spec: '>=16.3.0',
+31 warn ERESOLVE     from: {
+31 warn ERESOLVE       name: 'react-helmet',
+31 warn ERESOLVE       version: '6.1.0',
+31 warn ERESOLVE       location: 'node_modules/react-helmet',
+31 warn ERESOLVE       isWorkspace: false,
+31 warn ERESOLVE       dependents: [Array]
+31 warn ERESOLVE     }
+31 warn ERESOLVE   },
+31 warn ERESOLVE   dep: {
+31 warn ERESOLVE     name: 'react',
+31 warn ERESOLVE     version: undefined,
+31 warn ERESOLVE     errors: [ [FetchError] ],
+31 warn ERESOLVE     package: {},
+31 warn ERESOLVE     whileInstalling: {
+31 warn ERESOLVE       name: 'react-side-effect',
+31 warn ERESOLVE       version: '2.1.2',
+31 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+31 warn ERESOLVE     },
+31 warn ERESOLVE     location: 'node_modules/react',
+31 warn ERESOLVE     isWorkspace: false,
+31 warn ERESOLVE     dependents: [ [Object] ]
+31 warn ERESOLVE   },
+31 warn ERESOLVE   force: false,
+31 warn ERESOLVE   isMine: false,
+31 warn ERESOLVE   strictPeerDeps: false,
+31 warn ERESOLVE   current: {
+31 warn ERESOLVE     name: 'react',
+31 warn ERESOLVE     version: '19.2.5',
+31 warn ERESOLVE     location: 'node_modules/react',
+31 warn ERESOLVE     isWorkspace: false,
+31 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+31 warn ERESOLVE   }
+31 warn ERESOLVE }
+32 warn ERESOLVE overriding peer dependency {
+32 warn ERESOLVE   code: 'ERESOLVE',
+32 warn ERESOLVE   edge: {
+32 warn ERESOLVE     type: 'peer',
+32 warn ERESOLVE     name: 'react',
+32 warn ERESOLVE     spec: '>= 16',
+32 warn ERESOLVE     from: {
+32 warn ERESOLVE       name: 'react-scripts',
+32 warn ERESOLVE       version: '5.0.1',
+32 warn ERESOLVE       location: 'node_modules/react-scripts',
+32 warn ERESOLVE       isWorkspace: false,
+32 warn ERESOLVE       dependents: [Array]
+32 warn ERESOLVE     }
+32 warn ERESOLVE   },
+32 warn ERESOLVE   dep: {
+32 warn ERESOLVE     name: 'react',
+32 warn ERESOLVE     version: undefined,
+32 warn ERESOLVE     errors: [ [FetchError] ],
+32 warn ERESOLVE     package: {},
+32 warn ERESOLVE     whileInstalling: {
+32 warn ERESOLVE       name: 'react-side-effect',
+32 warn ERESOLVE       version: '2.1.2',
+32 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+32 warn ERESOLVE     },
+32 warn ERESOLVE     location: 'node_modules/react',
+32 warn ERESOLVE     isWorkspace: false,
+32 warn ERESOLVE     dependents: [ [Object] ]
+32 warn ERESOLVE   },
+32 warn ERESOLVE   force: false,
+32 warn ERESOLVE   isMine: false,
+32 warn ERESOLVE   strictPeerDeps: false,
+32 warn ERESOLVE   current: {
+32 warn ERESOLVE     name: 'react',
+32 warn ERESOLVE     version: '19.2.5',
+32 warn ERESOLVE     location: 'node_modules/react',
+32 warn ERESOLVE     isWorkspace: false,
+32 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+32 warn ERESOLVE   }
+32 warn ERESOLVE }
+33 warn ERESOLVE overriding peer dependency {
+33 warn ERESOLVE   code: 'ERESOLVE',
+33 warn ERESOLVE   edge: {
+33 warn ERESOLVE     type: 'peer',
+33 warn ERESOLVE     name: 'react',
+33 warn ERESOLVE     spec: '^16.8.0 || ^17 || ^18 || ^19',
+33 warn ERESOLVE     from: {
+33 warn ERESOLVE       name: 'yet-another-react-lightbox',
+33 warn ERESOLVE       version: '3.32.0',
+33 warn ERESOLVE       location: 'node_modules/yet-another-react-lightbox',
+33 warn ERESOLVE       isWorkspace: false,
+33 warn ERESOLVE       dependents: [Array]
+33 warn ERESOLVE     }
+33 warn ERESOLVE   },
+33 warn ERESOLVE   dep: {
+33 warn ERESOLVE     name: 'react',
+33 warn ERESOLVE     version: undefined,
+33 warn ERESOLVE     errors: [ [FetchError] ],
+33 warn ERESOLVE     package: {},
+33 warn ERESOLVE     whileInstalling: {
+33 warn ERESOLVE       name: 'react-side-effect',
+33 warn ERESOLVE       version: '2.1.2',
+33 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+33 warn ERESOLVE     },
+33 warn ERESOLVE     location: 'node_modules/react',
+33 warn ERESOLVE     isWorkspace: false,
+33 warn ERESOLVE     dependents: [ [Object] ]
+33 warn ERESOLVE   },
+33 warn ERESOLVE   force: false,
+33 warn ERESOLVE   isMine: false,
+33 warn ERESOLVE   strictPeerDeps: false,
+33 warn ERESOLVE   current: {
+33 warn ERESOLVE     name: 'react',
+33 warn ERESOLVE     version: '19.2.5',
+33 warn ERESOLVE     location: 'node_modules/react',
+33 warn ERESOLVE     isWorkspace: false,
+33 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+33 warn ERESOLVE   }
+33 warn ERESOLVE }
+34 warn ERESOLVE overriding peer dependency {
+34 warn ERESOLVE   code: 'ERESOLVE',
+34 warn ERESOLVE   edge: {
+34 warn ERESOLVE     type: 'peer',
+34 warn ERESOLVE     name: 'react',
+34 warn ERESOLVE     spec: '^16.3.0 || ^17.0.0 || ^18.0.0',
+34 warn ERESOLVE     error: 'INVALID',
+34 warn ERESOLVE     from: {
+34 warn ERESOLVE       name: 'react-side-effect',
+34 warn ERESOLVE       version: '2.1.2',
+34 warn ERESOLVE       location: 'node_modules/react-helmet/node_modules/react-side-effect',
+34 warn ERESOLVE       isWorkspace: false,
+34 warn ERESOLVE       dependents: [Array]
+34 warn ERESOLVE     }
+34 warn ERESOLVE   },
+34 warn ERESOLVE   dep: {
+34 warn ERESOLVE     name: 'react',
+34 warn ERESOLVE     version: undefined,
+34 warn ERESOLVE     errors: [ [FetchError] ],
+34 warn ERESOLVE     package: {},
+34 warn ERESOLVE     whileInstalling: {
+34 warn ERESOLVE       name: 'react-side-effect',
+34 warn ERESOLVE       version: '2.1.2',
+34 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+34 warn ERESOLVE     },
+34 warn ERESOLVE     location: 'node_modules/react',
+34 warn ERESOLVE     isWorkspace: false,
+34 warn ERESOLVE     dependents: [ [Object] ]
+34 warn ERESOLVE   },
+34 warn ERESOLVE   force: false,
+34 warn ERESOLVE   isMine: false,
+34 warn ERESOLVE   strictPeerDeps: false,
+34 warn ERESOLVE   current: {
+34 warn ERESOLVE     name: 'react',
+34 warn ERESOLVE     version: undefined,
+34 warn ERESOLVE     errors: [ [FetchError] ],
+34 warn ERESOLVE     package: {},
+34 warn ERESOLVE     location: 'node_modules/react',
+34 warn ERESOLVE     isWorkspace: false,
+34 warn ERESOLVE     dependents: [ [Object] ]
+34 warn ERESOLVE   }
+34 warn ERESOLVE }
+35 verbose type system
+36 verbose stack FetchError: request to https://registry.npmjs.org/xlsx failed, reason: 
+36 verbose stack     at ClientRequest.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\minipass-fetch\lib\index.js:130:14)
+36 verbose stack     at ClientRequest.emit (node:events:519:28)
+36 verbose stack     at emitErrorEvent (node:_http_client:105:11)
+36 verbose stack     at _destroy (node:_http_client:898:9)
+36 verbose stack     at onSocketNT (node:_http_client:918:5)
+36 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+37 error code EACCES
+38 error errno EACCES
+39 error FetchError: request to https://registry.npmjs.org/xlsx failed, reason: 
+39 error     at ClientRequest.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\minipass-fetch\lib\index.js:130:14)
+39 error     at ClientRequest.emit (node:events:519:28)
+39 error     at emitErrorEvent (node:_http_client:105:11)
+39 error     at _destroy (node:_http_client:898:9)
+39 error     at onSocketNT (node:_http_client:918:5)
+39 error     at process.processTicksAndRejections (node:internal/process/task_queues:91:21) {
+39 error   code: 'EACCES',
+39 error   errno: 'EACCES',
+39 error   type: 'system',
+39 error   requiredBy: '.'
+39 error }
+40 error
+40 error The operation was rejected by your operating system.
+40 error It's possible that the file was already in use (by a text editor or antivirus),
+40 error or that you lack permissions to access it.
+40 error
+40 error If you believe this might be a permissions issue, please double-check the
+40 error permissions of the file and its containing directories, or try running
+40 error the command again as root/Administrator.
+41 silly unfinished npm timer reify 1777890169902
+42 silly unfinished npm timer reify:loadTrees 1777890169904
+43 verbose cwd D:\stsebastian-church
+44 verbose os Windows_NT 10.0.26200
+45 verbose node v22.20.0
+46 verbose npm  v10.9.3
+47 verbose exit 1
+48 verbose code 1
+49 error A complete log of this run can be found in: D:\stsebastian-church\.npm-cache\_logs\2026-05-04T10_22_49_313Z-debug-0.log

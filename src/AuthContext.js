@@ -16,14 +16,21 @@ export const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
+        const trimmedEmail = (user.email || '').trim();
+        const ownerEmail = 'd3ztudio@gmail.com';
         // Check if owner or admin
-        const isOwner = user.email === 'd3ztudio@gmail.com';
+        const isOwner = trimmedEmail.toLowerCase() === ownerEmail;
         if (isOwner) {
           setIsAdmin(true);
         } else {
           // Check site_admins collection
-          const adminDoc = await getDoc(doc(db, 'site_admins', user.email));
-          setIsAdmin(adminDoc.exists());
+          try {
+            const adminDoc = await getDoc(doc(db, 'site_admins', trimmedEmail));
+            setIsAdmin(adminDoc.exists());
+          } catch (error) {
+            console.error('Failed to check admin access:', error);
+            setIsAdmin(false);
+          }
         }
       } else {
         setUser(null);
