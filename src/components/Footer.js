@@ -38,6 +38,15 @@ const Footer = () => {
       ),
     },
     {
+      name: 'Telegram',
+      href: normalizeExternalUrl(socialLinks.telegram, 'https://t.me/palli_media_puranattukkara'),
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <path d="M21.8 4.6c.2-.8-.6-1.4-1.3-1.1L2.9 10.2c-.9.3-.9 1.5 0 1.8l4.6 1.5 1.7 5.2c.3.9 1.5 1 2 .2l2.6-3.8 4.7 3.4c.7.5 1.7.1 1.9-.7l1.9-13.2zM8.7 12.8l9.5-6.1-7.8 7.3-.3 3.6-1.4-4.2z" />
+        </svg>
+      ),
+    },
+    {
       name: 'Instagram',
       href: normalizeExternalUrl(socialLinks.instagram, 'https://instagram.com'),
       icon: (
@@ -100,7 +109,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className="text-sm font-semibold tracking-wide text-white/90">Contact</p>
+              <p className="text-sm font-semibold tracking-wide text-white/90">Contact Developer</p>
               <div className="mt-3 flex flex-col items-center gap-2 md:items-start">
                 <a href="mailto:d3ztudio@gmail.com" className="inline-flex items-center gap-2 text-white/90 hover:text-gold">
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">

@@ -2,8 +2,8 @@ import React from 'react';
 
 const MassTimings = () => {
   const timings = [
-    { day: 'Sunday', time: '7:00 AM, 9:00 AM, 11:00 AM' },
-    { day: 'Monday to Saturday', time: '6:30 AM' },
+    { day: 'Sunday', time: '06:00 AM, 09:00 AM, 05:30 PM' },
+    { day: 'Monday to Saturday', time: '06:00 AM, 07:00 AM' },
     // Add more as needed
   ];
 

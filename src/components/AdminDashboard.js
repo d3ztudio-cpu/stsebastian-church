@@ -8,7 +8,7 @@ const AdminDashboard = () => {
   const { user, isAdmin, loading } = useAuth();
   const [liveUrl, setLiveUrl] = useState('');
   const [previewUrl, setPreviewUrl] = useState('');
-  const [socialLinks, setSocialLinks] = useState({ facebook: '', instagram: '', youtube: '', whatsapp: '' });
+  const [socialLinks, setSocialLinks] = useState({ facebook: '', instagram: '', youtube: '', whatsapp: '', telegram: '' });
   const [admins, setAdmins] = useState([]);
   const [newAdminEmail, setNewAdminEmail] = useState('');
   const [, setEvents] = useState([]);
@@ -41,7 +41,7 @@ const AdminDashboard = () => {
     // Load social links
     getDoc(doc(db, 'global_settings', 'socialLinks')).then(doc => {
       if (doc.exists()) {
-        setSocialLinks({ facebook: '', instagram: '', youtube: '', whatsapp: '', ...doc.data() });
+        setSocialLinks({ facebook: '', instagram: '', youtube: '', whatsapp: '', telegram: '', ...doc.data() });
       }
     });
 
@@ -263,6 +263,13 @@ const AdminDashboard = () => {
               value={socialLinks.whatsapp}
               onChange={(e) => handleSocialChange('whatsapp', e.target.value)}
               placeholder="WhatsApp Link"
+              className="p-2 border rounded"
+            />
+            <input
+              type="text"
+              value={socialLinks.telegram}
+              onChange={(e) => handleSocialChange('telegram', e.target.value)}
+              placeholder="Telegram Channel URL"
               className="p-2 border rounded"
             />
           </div>

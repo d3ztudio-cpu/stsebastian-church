@@ -1,43 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { collection, doc, onSnapshot } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
-
-const CATEGORY_LABELS = [
-  { key: 'parish trustee', label: 'Parish Trustee' },
-  { key: 'parish trustees', label: 'Parish Trustee' },
-  { key: 'trustee', label: 'Parish Trustee' },
-  { key: 'parish units', label: 'Parish Units' },
-  { key: 'unit', label: 'Parish Units' },
-  { key: 'media team', label: 'Media Team' },
-  { key: 'media', label: 'Media Team' },
-  { key: 'clc', label: 'CLC' },
-  { key: 'kcym', label: 'KCYM' },
-];
-
-const normalizeCategory = (value) => (value || '').toString().trim().toLowerCase();
-
-const personCard = (person, idx) => {
-  const hasImage = Boolean(person?.imageUrl);
-  return (
-    <div
-      key={person?.id || `${person?.name || 'person'}_${idx}`}
-      className="rounded-2xl border border-sapphire/10 bg-white p-4 shadow-sm"
-    >
-      <div className="mx-auto h-24 w-24 overflow-hidden rounded-2xl border border-sapphire/10 bg-gray-50">
-        {hasImage ? (
-          <img src={person.imageUrl} alt={person.name || 'Person'} className="h-full w-full object-cover" />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center text-xs text-gray-500">Image</div>
-        )}
-      </div>
-      <div className="mt-3 text-center">
-        <p className="font-semibold text-sapphire">{person?.name || 'Name'}</p>
-        {person?.role ? <p className="text-sm text-gray-600">{person.role}</p> : <p className="text-sm text-gray-400">Role</p>}
-        {person?.phone ? <p className="mt-1 text-sm text-gray-700">{person.phone}</p> : <p className="mt-1 text-sm text-gray-400">Number</p>}
-      </div>
-    </div>
-  );
-};
 
 const About = () => {
   const [aboutContent, setAboutContent] = useState({
@@ -47,46 +10,15 @@ const About = () => {
     assistantVicarName: '',
     assistantVicarImageUrl: '',
   });
-  const [people, setPeople] = useState([]);
 
   useEffect(() => {
     const unsubAbout = onSnapshot(doc(db, 'global_settings', 'aboutContent'), (snap) => {
       if (snap.exists()) setAboutContent((prev) => ({ ...prev, ...snap.data() }));
     });
-    const unsubPeople = onSnapshot(collection(db, 'about_people'), (snap) => {
-      setPeople(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
-    });
     return () => {
       unsubAbout();
-      unsubPeople();
     };
   }, []);
-
-  const grouped = useMemo(() => {
-    const buckets = new Map();
-    people.forEach((p) => {
-      const key = normalizeCategory(p.category);
-      if (!buckets.has(key)) buckets.set(key, []);
-      buckets.get(key).push(p);
-    });
-    return buckets;
-  }, [people]);
-
-  const sections = useMemo(() => {
-    const labelByKey = new Map(CATEGORY_LABELS.map((c) => [c.key, c.label]));
-    const usedKeys = new Set();
-
-    const ordered = [];
-    CATEGORY_LABELS.forEach((c) => {
-      if (usedKeys.has(c.label)) return;
-      usedKeys.add(c.label);
-      ordered.push({ label: c.label, keys: CATEGORY_LABELS.filter((x) => x.label === c.label).map((x) => x.key) });
-    });
-
-    const otherKeys = [...grouped.keys()].filter((k) => !labelByKey.has(k));
-    if (otherKeys.length) ordered.push({ label: 'Other', keys: otherKeys });
-    return ordered;
-  }, [grouped]);
 
   return (
     <section id="about" className="bg-white py-16">
@@ -130,23 +62,10 @@ const About = () => {
           </div>
         </div>
 
-        {sections.map((section) => {
-          const sectionPeople = section.keys.flatMap((k) => grouped.get(k) || []);
-          return (
-            <div key={section.label} className="mt-12">
-              <h3 className="text-center text-xl font-bold text-gray-900">{section.label.toUpperCase()}</h3>
-              <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                {(sectionPeople.length ? sectionPeople : Array.from({ length: 6 }).map(() => ({}))).map((p, idx) =>
-                  personCard(p, idx)
-                )}
-              </div>
-            </div>
-          );
-        })}
+        {/* People sections (Trustees/Units/Teams) temporarily hidden */}
       </div>
     </section>
   );
 };
 
 export default About;
-

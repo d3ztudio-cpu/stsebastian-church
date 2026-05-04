@@ -80,8 +80,7 @@ const Hero = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold text-sapphire">Directions</h2>
-              <p className="mt-2 text-gray-600">Find St. Sebastian Church (satellite view).</p>
+              <h2 className="text-3xl font-bold text-sapphire">Location</h2>
             </div>
             <a
               href={directionsUrl}
