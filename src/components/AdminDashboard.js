@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   const { user, isAdmin, loading } = useAuth();
   const [liveUrl, setLiveUrl] = useState('');
   const [previewUrl, setPreviewUrl] = useState('');
-  const [socialLinks, setSocialLinks] = useState({ facebook: '', instagram: '', youtube: '', whatsapp: '' });
+  const [socialLinks, setSocialLinks] = useState({ facebook: '', youtube: '', whatsapp: '' });
   const [admins, setAdmins] = useState([]);
   const [newAdminEmail, setNewAdminEmail] = useState('');
   const [, setEvents] = useState([]);
@@ -104,37 +104,11 @@ const AdminDashboard = () => {
   };
 
   if (loading) {
-    return (
-      <section id="admin" className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-700">Checking admin access...</p>
-        </div>
-      </section>
-    );
+    return null;
   }
 
   if (!isAdmin) {
-    return (
-      <section id="admin" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4 text-sapphire">Admin Dashboard</h2>
-          <div className="bg-gray-100 rounded-lg p-8 text-center">
-            <p className="text-gray-700 mb-4">
-              This area is reserved for administrators only. Public content remains visible to all visitors.
-            </p>
-            {user ? (
-              <p className="text-gray-600">
-                You are logged in as <strong>{user.email}</strong>, but this account does not have admin privileges.
-              </p>
-            ) : (
-              <p className="text-gray-600">
-                Please use the login button in the top menu to sign in with an admin account.
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-    );
+    return null;
   }
 
   return (
@@ -177,13 +151,6 @@ const AdminDashboard = () => {
               value={socialLinks.facebook}
               onChange={(e) => handleSocialChange('facebook', e.target.value)}
               placeholder="Facebook URL"
-              className="p-2 border rounded"
-            />
-            <input
-              type="text"
-              value={socialLinks.instagram}
-              onChange={(e) => handleSocialChange('instagram', e.target.value)}
-              placeholder="Instagram URL"
               className="p-2 border rounded"
             />
             <input
