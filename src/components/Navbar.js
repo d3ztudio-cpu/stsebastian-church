@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Login from './Login';
+import NotificationsBell from './NotificationsBell';
 
 const Navbar = () => {
   const { user, isAdmin } = useAuth();
@@ -24,7 +25,9 @@ const Navbar = () => {
           <a href="#about" className="hover:text-gold">About</a>
           <a href="#mass" className="hover:text-gold">Mass Timings</a>
           <a href="#events" className="hover:text-gold">Events</a>
-          {isAdmin && <a href="#admin" className="hover:text-gold">Admin</a>}
+          <a href="#bulletin" className="hover:text-gold">Bulletin</a>
+          {isAdmin && <a href="#admin-page" className="hover:text-gold">Admin</a>}
+          <NotificationsBell />
           {user ? (
             <button onClick={() => auth.signOut()} className="hover:text-gold">Logout</button>
           ) : (
@@ -32,20 +35,23 @@ const Navbar = () => {
           )}
         </div>
 
-        <button
-          type="button"
-          className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-white/20 transition hover:border-gold"
-          aria-label="Toggle navigation menu"
-          aria-expanded={showMobileMenu}
-          onClick={() => setShowMobileMenu((prev) => !prev)}
-        >
-          <span className="sr-only">Toggle navigation</span>
-          <div className="space-y-1.5">
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
-          </div>
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <NotificationsBell />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center p-2 rounded-md border border-white/20 transition hover:border-gold"
+            aria-label="Toggle navigation menu"
+            aria-expanded={showMobileMenu}
+            onClick={() => setShowMobileMenu((prev) => !prev)}
+          >
+            <span className="sr-only">Toggle navigation</span>
+            <div className="space-y-1.5">
+              <span className="block h-0.5 w-6 bg-white"></span>
+              <span className="block h-0.5 w-6 bg-white"></span>
+              <span className="block h-0.5 w-6 bg-white"></span>
+            </div>
+          </button>
+        </div>
       </div>
 
       <div className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${showMobileMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
@@ -73,7 +79,8 @@ const Navbar = () => {
             <a href="#about" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">About</a>
             <a href="#mass" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Mass Timings</a>
             <a href="#events" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Events</a>
-            {isAdmin && <a href="#admin" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Admin</a>}
+            <a href="#bulletin" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Bulletin</a>
+            {isAdmin && <a href="#admin-page" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Admin</a>}
             {user ? (
               <button
                 type="button"

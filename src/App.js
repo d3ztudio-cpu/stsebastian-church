@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { AuthProvider, useAuth } from './AuthContext';
 import Navbar from './components/Navbar';
@@ -6,13 +6,24 @@ import Hero from './components/Hero';
 import About from './components/About';
 import MassTimings from './components/MassTimings';
 import EventTimeline from './components/EventTimeline';
+import ParishBulletins from './components/ParishBulletins';
 import AdminDashboard from './components/AdminDashboard';
+import NoticePopup from './components/NoticePopup';
 import Footer from './components/Footer';
 import './App.css';
 
 function AppContent() {
   const { isAdmin } = useAuth();
   const siteUrl = 'https://stsebastian-church.web.app/';
+  const [hash, setHash] = useState(() => window.location.hash || '');
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash || '');
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const isAdminPage = hash === '#admin' || hash === '#admin-page';
 
   return (
     <div className="App">
@@ -41,12 +52,33 @@ function AppContent() {
           })}
         </script>
       </Helmet>
+      <NoticePopup />
       <Navbar />
-      <Hero />
-      <About />
-      <MassTimings />
-      <EventTimeline />
-      {isAdmin && <AdminDashboard />}
+      {isAdminPage ? (
+        isAdmin ? (
+          <div className="min-h-screen bg-gray-50 pt-24">
+            <AdminDashboard />
+          </div>
+        ) : (
+          <div className="min-h-screen bg-gray-50 pt-24">
+            <div className="container mx-auto px-4">
+              <div className="rounded-2xl border border-red-200 bg-white p-6 shadow-sm">
+                <h2 className="text-2xl font-bold text-sapphire">Admin</h2>
+                <p className="mt-2 text-gray-600">You don&apos;t have permission to view this page.</p>
+              </div>
+            </div>
+          </div>
+        )
+      ) : (
+        <>
+          <Hero />
+          <About />
+          <MassTimings />
+          <EventTimeline />
+          <ParishBulletins />
+          {isAdmin && <AdminDashboard />}
+        </>
+      )}
       <Footer />
     </div>
   );
