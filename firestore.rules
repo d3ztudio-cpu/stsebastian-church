@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null && request.auth.token.email != null;
+    }
+
+    function userEmail() {
+      return isSignedIn() ? request.auth.token.email : null;
+    }
+
+    function isOwner() {
+      return isSignedIn() && userEmail() == 'd3ztudio@gmail.com';
+    }
+
+    // Admin = owner OR email document exists in /site_admins/{email}
+    function isAdmin() {
+      return isOwner() || (isSignedIn() && exists(/databases/$(database)/documents/site_admins/$(userEmail())));
+    }
+
+    match /global_settings/{document} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Doc id must be the admin email address.
+    match /site_admins/{email} {
+      // Needed so admins can check their own status (AuthContext / exists()).
+      allow read: if isOwner() || (isSignedIn() && email == userEmail());
+      // Owner-only: add/remove admins or list all admins.
+      allow create, update, delete: if isOwner();
+    }
+
+    match /church_events/{document} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Public bulletin list + admin publishing.
+    match /parish_bulletins/{id} {
+      allow read: if true;
+      allow create, update: if isAdmin()
+        && request.resource.data.year is int
+        && request.resource.data.month is int
+        && request.resource.data.month >= 1
+        && request.resource.data.month <= 12
+        && request.resource.data.url is string
+        && request.resource.data.url.size() > 0;
+      allow delete: if isAdmin();
+    }
+
+    // Public notifications feed + admin-only create.
+    match /site_notifications/{id} {
+      allow read: if true;
+      allow create: if isAdmin()
+        && request.resource.data.type is string
+        && request.resource.data.createdAt is timestamp;
+      allow update, delete: if false;
+    }
+
+    // Admin-only for now (may contain phone numbers / private info).
+    match /about_people/{id} {
+      allow read, write: if isAdmin();
+    }
+
+    // Default deny.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+

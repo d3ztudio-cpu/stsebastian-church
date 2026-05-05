@@ -21,29 +21,16 @@ A professional React application for St. Sebastian Church, Puranattukara.
    - `global_settings` document `liveStream` with field `url`
    - `site_admins` collection with documents keyed by email
    - `church_events` collection with event documents
-5. Set Firestore security rules to allow read for all, write only for authenticated admins
+   - `parish_bulletins` collection with documents keyed like `YYYY-MM` (e.g. `2026-05`)
+   - `site_notifications` collection for public update feed
+5. Set Firestore security rules (see `firestore.rules`)
 6. Run `npm start` for development
 7. Build and deploy: `npm run build` then `firebase deploy`
 
 ## Firestore Security Rules Example
 
 ```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /global_settings/{document} {
-      allow read: if true;
-      allow write: if request.auth != null && (request.auth.token.email == 'd3ztudio@gmail.com' || exists(/databases/$(database)/documents/site_admins/$(request.auth.token.email)));
-    }
-    match /site_admins/{document} {
-      allow read, write: if request.auth != null && request.auth.token.email == 'd3ztudio@gmail.com';
-    }
-    match /church_events/{document} {
-      allow read: if true;
-      allow write: if request.auth != null && (request.auth.token.email == 'd3ztudio@gmail.com' || exists(/databases/$(database)/documents/site_admins/$(request.auth.token.email)));
-    }
-  }
-}
+See `firestore.rules`.
 ```
 
 ## Technologies
