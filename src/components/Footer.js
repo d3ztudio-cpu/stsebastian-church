@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -132,7 +132,7 @@ const Footer = () => {
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
                     <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.9 9h-3.2a15.7 15.7 0 00-1.4-6 8 8 0 014.6 6zM12 4c.9 1.2 1.8 3.4 2.2 7H9.8C10.2 7.4 11.1 5.2 12 4zM4.9 13h3.2c.2 2.2.8 4.2 1.4 6a8 8 0 01-4.6-6zm3.2-2H4.9a8 8 0 014.6-6 15.7 15.7 0 00-1.4 6zM12 20c-.9-1.2-1.8-3.4-2.2-7h4.4c-.4 3.6-1.3 5.8-2.2 7zm4.5-1a15.7 15.7 0 001.4-6h3.2a8 8 0 01-4.6 6zm-1.1-6H8.6c-.1-1.2-.1-2.6 0-4h6.8c.1 1.4.1 2.8 0 4z" />
                   </svg>
-                  <span>https://d3ztudio-main.web.app/</span>
+                  <span>d3ztudio.com</span>
                 </a>
               </div>
             </div>
