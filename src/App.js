@@ -7,6 +7,7 @@ import About from './components/About';
 import MassTimings from './components/MassTimings';
 import EventTimeline from './components/EventTimeline';
 import ParishBulletins from './components/ParishBulletins';
+import ParishUnits from './components/ParishUnits';
 import AdminDashboard from './components/AdminDashboard';
 import NoticePopup from './components/NoticePopup';
 import Footer from './components/Footer';
@@ -76,6 +77,7 @@ function AppContent() {
           <MassTimings />
           <EventTimeline />
           <ParishBulletins />
+          <ParishUnits />
           {isAdmin && <AdminDashboard />}
         </>
       )}

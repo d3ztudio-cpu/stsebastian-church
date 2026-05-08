@@ -9,6 +9,8 @@ const normalizeExternalUrl = (value, fallback) => {
   return `https://${raw}`;
 };
 
+const D3ZTUDIO_URL = 'https://d3ztudio.com';
+
 const Footer = () => {
   const [socialLinks, setSocialLinks] = useState({});
 
@@ -82,9 +84,23 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left">
             <div className="space-y-2">
               <p>
-                Website was developed and deployed by{' '}
-                <a href="https://d3ztudio-main.web.app/" className="text-gold hover:underline" target="_blank" rel="noreferrer">
+                Software solution by{' '}
+                <a href={D3ZTUDIO_URL} className="text-gold hover:underline" target="_blank" rel="noreferrer">
                   D3ZTUDIO
+                </a>
+                . Content is managed by St. Sebastian Church Parish Council, Puranattukara.
+                <a
+                  href={D3ZTUDIO_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ml-3 inline-flex items-center gap-2 rounded-full border border-gold/60 bg-white/10 px-3 py-1 text-xs text-gold transition hover:bg-white/15"
+                  aria-label="Open D3ZTUDIO website"
+                >
+                  Visit
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                    <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z" />
+                  </svg>
                 </a>
               </p>
               <p className="text-sm text-white/80">© 2026 St. Sebastian Church. All copyrights reserved.</p>
@@ -124,7 +140,7 @@ const Footer = () => {
                   <span>9188081324</span>
                 </a>
                 <a
-                  href="https://d3ztudio-main.web.app/"
+                  href={D3ZTUDIO_URL}
                   className="inline-flex items-center gap-2 text-white/90 hover:text-gold"
                   target="_blank"
                   rel="noreferrer"
