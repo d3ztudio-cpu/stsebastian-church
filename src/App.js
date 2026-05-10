@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { AuthProvider, useAuth } from './AuthContext';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { db } from './firebase';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,6 +19,7 @@ function AppContent() {
   const { isAdmin } = useAuth();
   const siteUrl = 'https://stsebastian-church.web.app/';
   const [hash, setHash] = useState(() => window.location.hash || '');
+  const [siteSections, setSiteSections] = useState(null);
 
   useEffect(() => {
     const onHashChange = () => setHash(window.location.hash || '');
@@ -25,6 +28,61 @@ function AppContent() {
   }, []);
 
   const isAdminPage = hash === '#admin' || hash === '#admin-page';
+
+  useEffect(() => {
+    if (isAdminPage) return;
+    const q = query(collection(db, 'site_sections'), orderBy('order', 'asc'));
+    const unsub = onSnapshot(
+      q,
+      (snap) => {
+        const rows = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+        setSiteSections(rows);
+      },
+      () => setSiteSections([]),
+    );
+    return () => unsub();
+  }, [isAdminPage]);
+
+  const sectionRegistry = useMemo(
+    () => ({
+      hero: <Hero />,
+      about: <About />,
+      mass_timings: <MassTimings />,
+      events: <EventTimeline />,
+      bulletins: <ParishBulletins />,
+      parish_units: <ParishUnits />,
+    }),
+    [],
+  );
+
+  const defaultSectionOrder = useMemo(
+    () => [
+      { id: 'hero', enabled: true, order: 1 },
+      { id: 'about', enabled: true, order: 2 },
+      { id: 'mass_timings', enabled: true, order: 3 },
+      { id: 'events', enabled: true, order: 4 },
+      { id: 'bulletins', enabled: true, order: 5 },
+      { id: 'parish_units', enabled: true, order: 6 },
+    ],
+    [],
+  );
+
+  const resolvedSections = useMemo(() => {
+    const incoming = Array.isArray(siteSections) ? siteSections : null;
+    if (!incoming || incoming.length === 0) return defaultSectionOrder;
+
+    const normalized = incoming
+      .map((row) => ({
+        id: row.id,
+        enabled: row.enabled !== false,
+        order: Number(row.order) || 0,
+      }))
+      .filter((row) => Boolean(sectionRegistry[row.id]));
+
+    const configuredIds = new Set(normalized.map((r) => r.id));
+    const missingDefaults = defaultSectionOrder.filter((d) => !configuredIds.has(d.id));
+    return [...normalized, ...missingDefaults].sort((a, b) => (a.order || 0) - (b.order || 0));
+  }, [siteSections, defaultSectionOrder, sectionRegistry]);
 
   return (
     <div className="App">
@@ -72,12 +130,11 @@ function AppContent() {
         )
       ) : (
         <>
-          <Hero />
-          <About />
-          <MassTimings />
-          <EventTimeline />
-          <ParishBulletins />
-          <ParishUnits />
+          {resolvedSections
+            .filter((s) => s.enabled)
+            .map((s) => (
+              <React.Fragment key={s.id}>{sectionRegistry[s.id]}</React.Fragment>
+            ))}
           {isAdmin && <AdminDashboard />}
         </>
       )}

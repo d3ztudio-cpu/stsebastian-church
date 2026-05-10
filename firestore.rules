@@ -63,10 +63,21 @@ service cloud.firestore {
       allow read, write: if isAdmin();
     }
 
+    // Public sections shown on About page; admin-managed.
+    match /about_sections/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Public website section ordering + visibility; admin-managed.
+    match /site_sections/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
     // Default deny.
     match /{document=**} {
       allow read, write: if false;
     }
   }
 }
-
