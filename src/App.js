@@ -10,6 +10,7 @@ import MassTimings from './components/MassTimings';
 import EventTimeline from './components/EventTimeline';
 import ParishBulletins from './components/ParishBulletins';
 import ParishUnits from './components/ParishUnits';
+import EnquirySection from './components/EnquirySection';
 import AdminDashboard from './components/AdminDashboard';
 import NoticePopup from './components/NoticePopup';
 import Footer from './components/Footer';
@@ -51,6 +52,7 @@ function AppContent() {
       events: <EventTimeline />,
       bulletins: <ParishBulletins />,
       parish_units: <ParishUnits />,
+      enquiry: <EnquirySection />,
     }),
     [],
   );
@@ -63,6 +65,7 @@ function AppContent() {
       { id: 'events', enabled: true, order: 4 },
       { id: 'bulletins', enabled: true, order: 5 },
       { id: 'parish_units', enabled: true, order: 6 },
+      { id: 'enquiry', enabled: true, order: 7 },
     ],
     [],
   );

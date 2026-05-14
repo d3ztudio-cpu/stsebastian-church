@@ -1,0 +1,105 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.3
+2 info using node@v22.20.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\stsebastian-church\.npmrc
+5 silly config load:file:C:\Users\dolus\.npmrc
+6 silly config load:file:C:\Users\dolus\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install @testing-library/jest-dom
+8 verbose argv "install" "--save-dev" "@testing-library/jest-dom"
+9 verbose logfile logs-max:10 dir:D:\stsebastian-church\.npm-cache\_logs\2026-05-14T16_43_04_389Z-
+10 verbose logfile D:\stsebastian-church\.npm-cache\_logs\2026-05-14T16_43_04_389Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest @testing-library/jest-dom@*
+15 silly packumentCache full:https://registry.npmjs.org/@testing-library%2fjest-dom cache-miss
+16 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+17 http fetch GET https://registry.npmjs.org/@testing-library%2fjest-dom attempt 1 failed with EACCES
+18 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with EACCES
+19 http fetch GET https://registry.npmjs.org/@testing-library%2fjest-dom attempt 2 failed with EACCES
+20 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with ENETUNREACH
+21 http fetch GET https://registry.npmjs.org/@testing-library%2fjest-dom attempt 3 failed with ENETUNREACH
+22 silly placeDep ROOT @testing-library/jest-dom@ OK for: stsebastian-church@0.1.0 want: *
+23 silly fetch manifest react@^16.3.0 || ^17.0.0 || ^18.0.0
+24 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+25 http fetch GET https://registry.npmjs.org/react attempt 1 failed with ENETUNREACH
+26 http fetch GET https://registry.npmjs.org/react attempt 2 failed with ENETUNREACH
+27 http fetch GET https://registry.npmjs.org/react attempt 3 failed with ENETUNREACH
+28 http fetch GET 200 https://registry.npmjs.org/react 70102ms (cache stale)
+29 silly packumentCache full:https://registry.npmjs.org/react set size:6633619 disposed:false
+30 warn ERESOLVE overriding peer dependency {
+30 warn ERESOLVE   code: 'ERESOLVE',
+30 warn ERESOLVE   edge: {
+30 warn ERESOLVE     type: 'peer',
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     spec: '^16.3.0 || ^17.0.0 || ^18.0.0',
+30 warn ERESOLVE     error: 'INVALID',
+30 warn ERESOLVE     from: {
+30 warn ERESOLVE       name: 'react-side-effect',
+30 warn ERESOLVE       version: '2.1.2',
+30 warn ERESOLVE       location: 'node_modules/react-helmet/node_modules/react-side-effect',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     }
+30 warn ERESOLVE   },
+30 warn ERESOLVE   dep: {
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     version: '18.3.1',
+30 warn ERESOLVE     whileInstalling: {
+30 warn ERESOLVE       name: 'react-side-effect',
+30 warn ERESOLVE       version: '2.1.2',
+30 warn ERESOLVE       path: 'D:\\stsebastian-church\\node_modules\\react-helmet\\node_modules\\react-side-effect'
+30 warn ERESOLVE     },
+30 warn ERESOLVE     location: 'node_modules/react',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [ [Object] ]
+30 warn ERESOLVE   },
+30 warn ERESOLVE   force: false,
+30 warn ERESOLVE   isMine: false,
+30 warn ERESOLVE   strictPeerDeps: false,
+30 warn ERESOLVE   current: {
+30 warn ERESOLVE     name: 'react',
+30 warn ERESOLVE     version: '19.2.5',
+30 warn ERESOLVE     location: 'node_modules/react',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [ [Object], [Object], [Object], [Object], [Object] ]
+30 warn ERESOLVE   },
+30 warn ERESOLVE   peerConflict: {
+30 warn ERESOLVE     current: {
+30 warn ERESOLVE       name: 'react',
+30 warn ERESOLVE       version: '19.2.5',
+30 warn ERESOLVE       location: 'node_modules/react',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     },
+30 warn ERESOLVE     peer: {
+30 warn ERESOLVE       name: 'react',
+30 warn ERESOLVE       version: '18.3.1',
+30 warn ERESOLVE       whileInstalling: [Object],
+30 warn ERESOLVE       location: 'node_modules/react',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     }
+30 warn ERESOLVE   }
+30 warn ERESOLVE }
+31 verbose type system
+32 verbose stack FetchError: request to https://registry.npmjs.org/@testing-library%2fjest-dom failed, reason: 
+32 verbose stack     at ClientRequest.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\minipass-fetch\lib\index.js:130:14)
+32 verbose stack     at ClientRequest.emit (node:events:519:28)
+32 verbose stack     at emitErrorEvent (node:_http_client:105:11)
+32 verbose stack     at _destroy (node:_http_client:898:9)
+32 verbose stack     at onSocketNT (node:_http_client:918:5)
+32 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+33 error code ENETUNREACH
+34 error errno ENETUNREACH
+35 error request to https://registry.npmjs.org/@testing-library%2fjest-dom failed, reason: 
+36 silly unfinished npm timer reify 1778776985219
+37 silly unfinished npm timer reify:loadTrees 1778776985220
+38 verbose cwd D:\stsebastian-church
+39 verbose os Windows_NT 10.0.26200
+40 verbose node v22.20.0
+41 verbose npm  v10.9.3
+42 verbose exit 1
+43 verbose code 1
+44 error A complete log of this run can be found in: D:\stsebastian-church\.npm-cache\_logs\2026-05-14T16_43_04_389Z-debug-0.log

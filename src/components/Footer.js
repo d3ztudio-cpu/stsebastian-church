@@ -9,7 +9,7 @@ const normalizeExternalUrl = (value, fallback) => {
   return `https://${raw}`;
 };
 
-const D3ZTUDIO_URL = 'https://d3ztudio.com';
+const D3ZTUDIO_URL = 'https://d3ztudio-main.web.app/';
 
 const Footer = () => {
   const [socialLinks, setSocialLinks] = useState({});

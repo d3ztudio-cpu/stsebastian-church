@@ -27,6 +27,7 @@ const Navbar = () => {
           <a href="#events" className="hover:text-gold">Events</a>
           <a href="#bulletin" className="hover:text-gold">Bulletin</a>
           <a href="#parish-units" className="hover:text-gold">Parish Units</a>
+          <a href="#enquiry" className="hover:text-gold">Enquiry</a>
           {isAdmin && <a href="#admin-page" className="hover:text-gold">Admin</a>}
           <NotificationsBell />
           {user ? (
@@ -82,6 +83,7 @@ const Navbar = () => {
             <a href="#events" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Events</a>
             <a href="#bulletin" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Bulletin</a>
             <a href="#parish-units" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Parish Units</a>
+            <a href="#enquiry" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Enquiry</a>
             {isAdmin && <a href="#admin-page" className="block rounded-xl px-4 py-3 text-white hover:bg-white/10 hover:text-gold">Admin</a>}
             {user ? (
               <button
