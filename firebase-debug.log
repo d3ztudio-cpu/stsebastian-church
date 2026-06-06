@@ -1,0 +1,203 @@
+[debug] [2026-06-06T17:59:05.688Z] ----------------------------------------------------------------------
+[debug] [2026-06-06T17:59:05.691Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dolus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project stsebastian-church
+[debug] [2026-06-06T17:59:05.692Z] CLI Version:   15.19.1
+[debug] [2026-06-06T17:59:05.692Z] Platform:      win32
+[debug] [2026-06-06T17:59:05.692Z] Node Version:  v26.3.0
+[debug] [2026-06-06T17:59:05.692Z] Time:          Sat Jun 06 2026 23:29:05 GMT+0530 (India Standard Time)
+[debug] [2026-06-06T17:59:05.692Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-06T17:59:07.445Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-06T17:59:07.446Z] > authorizing via signed-in user (d3ztudio@gmail.com)
+[debug] [2026-06-06T17:59:07.446Z] [iam] checking project stsebastian-church for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-06T17:59:07.447Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:07.448Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:07.449Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions [none]
+[debug] [2026-06-06T17:59:07.450Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions  x-goog-user-project=stsebastian-church
+[debug] [2026-06-06T17:59:07.450Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T17:59:08.908Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions 200
+[debug] [2026-06-06T17:59:08.908Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T17:59:08.910Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:08.910Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:08.910Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church [none]
+[debug] [2026-06-06T17:59:09.701Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church 200
+[debug] [2026-06-06T17:59:09.702Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church {"projectId":"stsebastian-church","projectNumber":"634888465310","displayName":"stsebastian-church","name":"projects/stsebastian-church","resources":{"hostingSite":"stsebastian-church"},"state":"ACTIVE","etag":"1_f7b333dd-2b30-484e-977f-a0f95e6cee70"}
+[info] 
+[info] === Deploying to 'stsebastian-church'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-06T17:59:09.705Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:09.705Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:09.705Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church [none]
+[debug] [2026-06-06T17:59:11.046Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church 200
+[debug] [2026-06-06T17:59:11.046Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church {"name":"projects/stsebastian-church/sites/stsebastian-church","defaultUrl":"https://stsebastian-church.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-06-06T17:59:11.049Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:11.049Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:11.049Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions [none]
+[debug] [2026-06-06T17:59:11.049Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-06T17:59:12.479Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions 200
+[debug] [2026-06-06T17:59:12.480Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions {"name":"projects/634888465310/sites/stsebastian-church/versions/6903280326a51583","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[stsebastian-church]: beginning deploy... 
+[info] i  hosting[stsebastian-church]: found 16 files in build 
+[debug] [2026-06-06T17:59:12.506Z] [hosting] uploading with 200 concurrency
+[debug] [2026-06-06T17:59:13.065Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:13.065Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:13.067Z] [hosting] hash cache [YnVpbGQ] stored for 16 files
+[debug] [2026-06-06T17:59:13.068Z] [hosting][hash queue][FINAL] {"max":553,"min":4,"avg":44.6875,"active":0,"complete":16,"success":16,"errored":0,"retried":0,"total":16,"elapsed":560}
+[debug] [2026-06-06T17:59:13.069Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/6903280326a51583:populateFiles [none]
+[debug] [2026-06-06T17:59:13.069Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/6903280326a51583:populateFiles {"files":{"/sitemap.xml":"551dfb58aa965e5678cd13d47b9eaa433edaeb5577814b8f515f6397e5eb1ad7","/robots.txt":"552c91cd70a09926d30bdd115474f077fcaa893abd970bed3d9b23df6ed5d4d5","/parish-units-hero.jpg":"9e1d5fde3836fe1db308d39d3ae82faf0af20d6de4197b5656b3101d9b44f4a1","/manifest.json":"83aee0fd1ac9afc9c3e85c8322f9cfa81d54ffd0affd1a8473f659a590760604","/logo512.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/logo192.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/church-logo.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/index.html":"0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4","/asset-manifest.json":"5c9ab2ea94f27966b454be49648ab7da6795dabd5f8ea2fd0a1ef188c42bf332","/static/js/main.4ac474c6.js.LICENSE.txt":"539c6c739775d31f3e38cb0da812ee34aaf5bb97184bbfaba6c35fbfe04ac7e1","/static/css/main.d2f6976f.css.map":"c1f6414b6bdaf5705a855d917d331d632e005d49b856ccff03faaa0866655379","/404.html":"762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890","/static/css/main.d2f6976f.css":"cc4499813ffe9eccaf079a8f1654e915eb0d463ea5cc1fdd2542f2c445565714","/static/js/main.4ac474c6.js":"51b3cfb34cd02c3b2c7496f740a3dcd52bf678d82511cc63d4aff5bd218cf383","/static/js/main.4ac474c6.js.map":"458131fb7a8388b5cb6eb21d22e61d90dd9b2f8f042242c5715b0ee38c670fcf"}}
+[debug] [2026-06-06T17:59:13.813Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/6903280326a51583:populateFiles 200
+[debug] [2026-06-06T17:59:13.813Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/6903280326a51583:populateFiles {"uploadRequiredHashes":["0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/6903280326a51583/files"}
+[debug] [2026-06-06T17:59:13.814Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:13.814Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:13.814Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/6903280326a51583/files/0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4 [none]
+[debug] [2026-06-06T17:59:13.814Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/6903280326a51583/files/0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4 [stream]
+[debug] [2026-06-06T17:59:13.815Z] [hosting][populate queue][FINAL] {"max":749,"min":749,"avg":749,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":750}
+[debug] [2026-06-06T17:59:13.815Z] [hosting] uploads queued: 1
+[info] i  hosting: uploading new files [0/1] (0%) 
+[debug] [2026-06-06T17:59:15.688Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/6903280326a51583/files/0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4 200
+[debug] [2026-06-06T17:59:15.689Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/6903280326a51583/files/0f55da0bbb8a942c9ecd42ddc576e70664475c33c689fe34381ad125a7cdf8e4 [stream]
+[debug] [2026-06-06T17:59:15.689Z] [hosting][upload queue][FINAL] {"max":1876,"min":1876,"avg":1876,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1876}
+[info] i  hosting: upload complete 
+[info] +  hosting[stsebastian-church]: file upload complete 
+[debug] [2026-06-06T17:59:15.689Z] [hosting] deploy completed after 3204ms
+[debug] [2026-06-06T17:59:15.689Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "stsebastian-church"
+    },
+    "version": "projects/634888465310/sites/stsebastian-church/versions/6903280326a51583"
+  }
+]
+[info] i  hosting[stsebastian-church]: finalizing version... 
+[debug] [2026-06-06T17:59:15.690Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:15.691Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:15.691Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/6903280326a51583 updateMask=status%2Cconfig
+[debug] [2026-06-06T17:59:15.691Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/6903280326a51583 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-06-06T17:59:16.486Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/6903280326a51583 200
+[debug] [2026-06-06T17:59:16.487Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/6903280326a51583 {"name":"projects/634888465310/sites/stsebastian-church/versions/6903280326a51583","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T17:59:08.828476Z","createUser":{"email":"d3ztudio@gmail.com"},"finalizeTime":"2026-06-06T17:59:13.526711Z","finalizeUser":{"email":"d3ztudio@gmail.com"}}
+[debug] [2026-06-06T17:59:16.487Z] [hosting] finalized version for stsebastian-church:[object Object]
+[info] +  hosting[stsebastian-church]: version finalized 
+[info] i  hosting[stsebastian-church]: releasing new version... 
+[debug] [2026-06-06T17:59:16.487Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:16.487Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T17:59:16.487Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases versionName=projects%2F634888465310%2Fsites%2Fstsebastian-church%2Fversions%2F6903280326a51583
+[debug] [2026-06-06T17:59:16.487Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases {}
+[debug] [2026-06-06T17:59:17.449Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases 200
+[debug] [2026-06-06T17:59:17.450Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases {"name":"projects/634888465310/sites/stsebastian-church/channels/live/releases/1780768753719000","version":{"name":"projects/634888465310/sites/stsebastian-church/versions/6903280326a51583","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T17:59:08.828476Z","createUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"},"finalizeTime":"2026-06-06T17:59:13.526711Z","finalizeUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}},"type":"DEPLOY","releaseTime":"2026-06-06T17:59:13.719Z","releaseUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}}
+[debug] [2026-06-06T17:59:17.450Z] [hosting] release: {"name":"projects/634888465310/sites/stsebastian-church/channels/live/releases/1780768753719000","version":{"name":"projects/634888465310/sites/stsebastian-church/versions/6903280326a51583","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T17:59:08.828476Z","createUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"},"finalizeTime":"2026-06-06T17:59:13.526711Z","finalizeUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}},"type":"DEPLOY","releaseTime":"2026-06-06T17:59:13.719Z","releaseUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}}
+[info] +  hosting[stsebastian-church]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/stsebastian-church/overview
+[info] Hosting URL: https://stsebastian-church.web.app
+[debug] [2026-06-06T18:01:36.252Z] ----------------------------------------------------------------------
+[debug] [2026-06-06T18:01:36.254Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dolus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project stsebastian-church
+[debug] [2026-06-06T18:01:36.254Z] CLI Version:   15.19.1
+[debug] [2026-06-06T18:01:36.254Z] Platform:      win32
+[debug] [2026-06-06T18:01:36.255Z] Node Version:  v26.3.0
+[debug] [2026-06-06T18:01:36.255Z] Time:          Sat Jun 06 2026 23:31:36 GMT+0530 (India Standard Time)
+[debug] [2026-06-06T18:01:36.255Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-06T18:01:37.778Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-06T18:01:37.778Z] > authorizing via signed-in user (d3ztudio@gmail.com)
+[debug] [2026-06-06T18:01:37.779Z] [iam] checking project stsebastian-church for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-06T18:01:37.781Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:37.782Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:37.783Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions [none]
+[debug] [2026-06-06T18:01:37.783Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions  x-goog-user-project=stsebastian-church
+[debug] [2026-06-06T18:01:37.783Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T18:01:39.259Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions 200
+[debug] [2026-06-06T18:01:39.259Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/stsebastian-church:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-06T18:01:39.260Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:39.260Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:39.261Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church [none]
+[debug] [2026-06-06T18:01:40.072Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church 200
+[debug] [2026-06-06T18:01:40.072Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/stsebastian-church {"projectId":"stsebastian-church","projectNumber":"634888465310","displayName":"stsebastian-church","name":"projects/stsebastian-church","resources":{"hostingSite":"stsebastian-church"},"state":"ACTIVE","etag":"1_f7b333dd-2b30-484e-977f-a0f95e6cee70"}
+[info] 
+[info] === Deploying to 'stsebastian-church'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-06T18:01:40.076Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:40.077Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:40.077Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church [none]
+[debug] [2026-06-06T18:01:41.616Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church 200
+[debug] [2026-06-06T18:01:41.617Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/stsebastian-church/sites/stsebastian-church {"name":"projects/stsebastian-church/sites/stsebastian-church","defaultUrl":"https://stsebastian-church.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-06-06T18:01:41.620Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:41.621Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:41.621Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions [none]
+[debug] [2026-06-06T18:01:41.621Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-06T18:01:42.701Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions 200
+[debug] [2026-06-06T18:01:42.701Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions {"name":"projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[stsebastian-church]: beginning deploy... 
+[info] i  hosting[stsebastian-church]: found 16 files in build 
+[debug] [2026-06-06T18:01:42.716Z] [hosting] uploading with 200 concurrency
+[debug] [2026-06-06T18:01:43.228Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:43.229Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:43.231Z] [hosting] hash cache [YnVpbGQ] stored for 16 files
+[debug] [2026-06-06T18:01:43.231Z] [hosting][hash queue][FINAL] {"max":509,"min":1,"avg":36.125,"active":0,"complete":16,"success":16,"errored":0,"retried":0,"total":16,"elapsed":514}
+[debug] [2026-06-06T18:01:43.231Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd:populateFiles [none]
+[debug] [2026-06-06T18:01:43.232Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd:populateFiles {"files":{"/sitemap.xml":"551dfb58aa965e5678cd13d47b9eaa433edaeb5577814b8f515f6397e5eb1ad7","/robots.txt":"552c91cd70a09926d30bdd115474f077fcaa893abd970bed3d9b23df6ed5d4d5","/parish-units-hero.jpg":"9e1d5fde3836fe1db308d39d3ae82faf0af20d6de4197b5656b3101d9b44f4a1","/manifest.json":"83aee0fd1ac9afc9c3e85c8322f9cfa81d54ffd0affd1a8473f659a590760604","/logo512.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/logo192.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/church-logo.png":"35e3fdb3bb94902db97a3585464670448ab2d7c634298f32004d3fbb48080fe5","/404.html":"762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890","/index.html":"71f36436364b14121f4e855cfdce8158c565303cdbea40112166ba94681d0011","/static/js/main.4ac474c6.js.LICENSE.txt":"539c6c739775d31f3e38cb0da812ee34aaf5bb97184bbfaba6c35fbfe04ac7e1","/asset-manifest.json":"5c9ab2ea94f27966b454be49648ab7da6795dabd5f8ea2fd0a1ef188c42bf332","/static/css/main.d2f6976f.css.map":"c1f6414b6bdaf5705a855d917d331d632e005d49b856ccff03faaa0866655379","/static/css/main.d2f6976f.css":"cc4499813ffe9eccaf079a8f1654e915eb0d463ea5cc1fdd2542f2c445565714","/static/js/main.4ac474c6.js":"51b3cfb34cd02c3b2c7496f740a3dcd52bf678d82511cc63d4aff5bd218cf383","/static/js/main.4ac474c6.js.map":"458131fb7a8388b5cb6eb21d22e61d90dd9b2f8f042242c5715b0ee38c670fcf"}}
+[debug] [2026-06-06T18:01:44.388Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd:populateFiles 200
+[debug] [2026-06-06T18:01:44.388Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/stsebastian-church/versions/abd408a93b0977dd/files"}
+[debug] [2026-06-06T18:01:44.389Z] [hosting][populate queue][FINAL] {"max":1161,"min":1161,"avg":1161,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1161}
+[debug] [2026-06-06T18:01:44.389Z] [hosting] uploads queued: 0
+[debug] [2026-06-06T18:01:44.389Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1780768904389}
+[info] i  hosting: upload complete 
+[info] +  hosting[stsebastian-church]: file upload complete 
+[debug] [2026-06-06T18:01:44.390Z] [hosting] deploy completed after 1686ms
+[debug] [2026-06-06T18:01:44.390Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "stsebastian-church"
+    },
+    "version": "projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd"
+  }
+]
+[info] i  hosting[stsebastian-church]: finalizing version... 
+[debug] [2026-06-06T18:01:44.394Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:44.394Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:44.395Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/abd408a93b0977dd updateMask=status%2Cconfig
+[debug] [2026-06-06T18:01:44.395Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/abd408a93b0977dd {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-06-06T18:01:45.316Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/abd408a93b0977dd 200
+[debug] [2026-06-06T18:01:45.316Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/versions/abd408a93b0977dd {"name":"projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T18:01:39.267812Z","createUser":{"email":"d3ztudio@gmail.com"},"finalizeTime":"2026-06-06T18:01:42.283912Z","finalizeUser":{"email":"d3ztudio@gmail.com"}}
+[debug] [2026-06-06T18:01:45.316Z] [hosting] finalized version for stsebastian-church:[object Object]
+[info] +  hosting[stsebastian-church]: version finalized 
+[info] i  hosting[stsebastian-church]: releasing new version... 
+[debug] [2026-06-06T18:01:45.317Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:45.317Z] Checked if tokens are valid: true, expires at: 1780771616165
+[debug] [2026-06-06T18:01:45.317Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases versionName=projects%2F634888465310%2Fsites%2Fstsebastian-church%2Fversions%2Fabd408a93b0977dd
+[debug] [2026-06-06T18:01:45.317Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases {}
+[debug] [2026-06-06T18:01:46.446Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases 200
+[debug] [2026-06-06T18:01:46.447Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/stsebastian-church/channels/live/releases {"name":"projects/634888465310/sites/stsebastian-church/channels/live/releases/1780768902775000","version":{"name":"projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T18:01:39.267812Z","createUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"},"finalizeTime":"2026-06-06T18:01:42.283912Z","finalizeUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}},"type":"DEPLOY","releaseTime":"2026-06-06T18:01:42.775Z","releaseUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}}
+[debug] [2026-06-06T18:01:46.447Z] [hosting] release: {"name":"projects/634888465310/sites/stsebastian-church/channels/live/releases/1780768902775000","version":{"name":"projects/634888465310/sites/stsebastian-church/versions/abd408a93b0977dd","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-06T18:01:39.267812Z","createUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"},"finalizeTime":"2026-06-06T18:01:42.283912Z","finalizeUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}},"type":"DEPLOY","releaseTime":"2026-06-06T18:01:42.775Z","releaseUser":{"email":"d3ztudio@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJQI0qCRleihyddhFXdIsuL81U3_G1t9D7uBczGbC7phZdMmLwb"}}
+[info] +  hosting[stsebastian-church]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/stsebastian-church/overview
+[info] Hosting URL: https://stsebastian-church.web.app
